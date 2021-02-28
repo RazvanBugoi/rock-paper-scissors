@@ -1,5 +1,17 @@
 // game is gonna be played against computer
 // create a function called 'computerPlay' that will randomly return either 'Rock' , 'Paper' or 'Scissors'
+function computerPlay() {
+    const gameChoices = ['Rock', 'Paper', 'Scrissors'];
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    return gameChoices[getRandomInt(3)];
+}
+
+
+
 // Write a function called 'playRound' that plays a single round of Rock Paper Scissors
 // The function should take two parameters(playerSelection, computerSelection) {
 
