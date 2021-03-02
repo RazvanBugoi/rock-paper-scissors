@@ -11,27 +11,37 @@ function computerPlay() {
     return computerSelection;
 }
 
-// - make the two parameters lowercase and store their result into variables;
-let playerSelection;
-let computerSelection;
-let computerVictories = 0;
-let playerVictories = 0;
-let computer = 'Computer';
-let player = 'Player';
-
 // create a function that will return the user input 
-
+// use 'prompt' to get input from the user;
 function playerPlay() {
     playerSelection = prompt('Please select your weapon', 'paper', 'rock', 'scissors').toLowerCase();
 }
 
+
+// - make the two parameters lowercase and store their result into variables;
+let playerSelection;
+let computerSelection;
+
+// we need 2 variables to keep track of the score for both players
+// variables should be initiated with 0
+let computerVictories = 0;
+let playerVictories = 0;
+
+// we need 2 variables to display the winner of the game
+let computer = 'Computer';
+let player = 'Player';
+
+
 // Write a function called 'playRound' that plays a single round of Rock Paper Scissors
-// The function should take two parameters(playerSelection, computerSelection) {
 function playRound() {
+
+    // we call the computerPlay function to log the computer selection
+    // we call the playerPlay function to log the player selection
     computerPlay();
     playerPlay();
-    // playerSelection = prompt('Choose your weapon', 'rock').toLowerCase();
-    // computerSelection = computerPlay();
+
+
+    // We create conditionals to display the right message according to the output and increase the corresponding counter variable
     // - there can only be 7 possible outcomes:
 
     // - 1. "You Won! Rock beats Scissors."
@@ -71,42 +81,29 @@ function playRound() {
 
     
 }
-
-
-
     
     
-    
-    
-    
-    
-// }
 
 // Write a new function called game() {
 
 function game() {
-    // we need 2 variables to keep track of the score for both players
-    // variables should be initiated with 0
 
-    // use the computerPlay function inside this one to play a 5 round game
+// use a loop to play more than 1 round of the game
+// if one player gets to score 3, return message and finish game by exiting loop
     for (let i=0; i<=10; i++) {
         if (computerVictories == 3 || playerVictories == 3) {
+            console.log(`Congratulations ${(computerVictories > 2) ? computer : player}! You won.`);
             computerVictories = 0;
             playerVictories = 0;
-            return `Congratulations ${(computerVictories > 2) ? computer : player}! You won.`;
+            return;
     } else {
         playRound();
             console.log(`Current score is:\n  Player: ${playerVictories} \n Computer ${computerVictories}`);
-    }
+            }
     }
 }
 
-
-    // if one player wins a round, his variable should increase by 1;
-    // if it's a tie round, both variables will remain the same;
-    // use console.log after each round to display the score;
-    // when one of the variables reaches value = 5, return a message like so 'Player Won' / 'Computer Won'
 // }
 
-// use 'prompt' to get input from the user;
+
 
