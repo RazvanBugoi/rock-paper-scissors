@@ -37,36 +37,36 @@ function playRound() {
     // - 1. "You Won! Rock beats Scissors."
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerVictories += 1;
-        return "You Won! Rock beats Scissors."
+        console.log("You Won! Rock beats Scissors.")
 
     // - 2. "You Won! Paper beats Rock."
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerVictories += 1;
-        return "You Won! Paper beats Rock."
+        console.log("You Won! Paper beats Rock.")
 
     // - 3. "You Won! Scissors beats Paper."
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerVictories += 1;
-        return "You Won! Scissors beats Paper."
+        console.log("You Won! Scissors beats Paper.")
 
     // - 4. "You Lose! Rock beats Scissors."
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerVictories += 1;
-        return "You Lose! Rock beats Scissors."
+        console.log("You Lose! Rock beats Scissors.")
 
     // - 5. "You Lose! Scissors beats Paper."
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerVictories += 1;
-        return "You Lose! Scissors beats Paper."
+        console.log("You Lose! Scissors beats Paper.")
 
     // - 6. "You Lose! Paper beats Rock."
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerVictories += 1;
-        return "You Lose! Paper beats Rock."
+        console.log("You Lose! Paper beats Rock.")
 
     // - 7. "It's a tie. You selected the same weapon."
     } else {
-        return "It's a tie. You selected the same weapon."
+        console.log("It's a tie. You selected the same weapon.");
     }
 
     
@@ -91,10 +91,12 @@ function game() {
     // use the computerPlay function inside this one to play a 5 round game
     for (let i=0; i<=10; i++) {
         if (computerVictories == 3 || playerVictories == 3) {
+            computerVictories = 0;
+            playerVictories = 0;
             return `Congratulations ${(computerVictories > 2) ? computer : player}! You won.`;
     } else {
         playRound();
-        console.log(`Current score is:\n  Player: ${playerVictories} \n Computer ${computerVictories}`);
+            console.log(`Current score is:\n  Player: ${playerVictories} \n Computer ${computerVictories}`);
     }
     }
 }
