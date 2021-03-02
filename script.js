@@ -91,16 +91,16 @@ function game() {
 // use a loop to play more than 1 round of the game
 // if one player gets to score 3, return message and finish game by exiting loop
     for (let i=0; i<=10; i++) {
-        if (computerVictories == 3 || playerVictories == 3) {
-            console.log(`Congratulations ${(computerVictories > 2) ? computer : player}! You won.`);
-            computerVictories = 0;
-            playerVictories = 0;
-            return;
+        if (computerVictories == 5 || playerVictories == 5) {
+            return `Congratulations ${(computerVictories > 4) ? computer : player}! You won.`;
     } else {
         playRound();
             console.log(`Current score is:\n  Player: ${playerVictories} \n Computer ${computerVictories}`);
             }
     }
+
+    computerVictories = 0;
+    playerVictories = 0;
 }
 
 // }
