@@ -8,3 +8,10 @@
     color: #1d2b47;
     font-size: 3rem;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        text-align: center;
+    }
+  }
